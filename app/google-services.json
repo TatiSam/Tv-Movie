@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "360355759578",
+    "project_id": "movie-13caa",
+    "storage_bucket": "movie-13caa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360355759578:android:531ba5082693eda87aace3",
+        "android_client_info": {
+          "package_name": "com.tatisam.movie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "360355759578-dhsctop1ma3f7d7k8kugl5mooutq2kkn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tatisam.movie",
+            "certificate_hash": "d05ce70149a3b1d7383b688e952aa44658506519"
+          }
+        },
+        {
+          "client_id": "360355759578-c3scjilf2js16b5dql571acmvg5lrmtq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYh41KlBEcJh4WwFupeMGc_YD5mzk_LEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "360355759578-c3scjilf2js16b5dql571acmvg5lrmtq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

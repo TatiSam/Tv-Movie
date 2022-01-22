@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.tatisam.movie.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_movieFragment"
+            app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_tvFragment"
+            app:destination="@id/tvFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_trendingNowFragment"
+            app:destination="@id/trendingNowFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.tatisam.movie.ui.item.MovieFragment"
+        android:label="movie_fragment"
+        tools:layout="@layout/movie_fragment" >
+        <action
+            android:id="@+id/action_movieFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_movieFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvFragment"
+        android:name="com.tatisam.movie.ui.item.TvFragment"
+        android:label="TvFragment" >
+        <action
+            android:id="@+id/action_tvFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_tvFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trendingNowFragment"
+        android:name="com.tatisam.movie.ui.item.TrendingNowFragment"
+        android:label="TrendingNowFragment" >
+        <action
+            android:id="@+id/action_trendingNowFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_trendingNowFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.tatisam.movie.ui.list.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_listFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_tvFragment"
+            app:destination="@id/tvFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_trendingNowFragment"
+            app:destination="@id/trendingNowFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.tatisam.movie.ui.settings.SettingsFragment"
+        android:label="settings_fragment"
+        tools:layout="@layout/settings_fragment" />
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.tatisam.movie.ui.favorite.FavoriteFragment"
+        android:label="favorite_fragment"
+        tools:layout="@layout/favorite_fragment" >
+        <action
+            android:id="@+id/action_navigation_favorite_to_tvFragment"
+            app:destination="@id/tvFragment" />
+        <action
+            android:id="@+id/action_navigation_favorite_to_movieFragment"
+            app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_navigation_favorite_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_navigation_favorite_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_favorite_to_trendingNowFragment"
+            app:destination="@id/trendingNowFragment" />
+    </fragment>
+</navigation>
