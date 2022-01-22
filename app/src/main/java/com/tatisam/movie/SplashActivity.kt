@@ -20,9 +20,10 @@ class SplashActivity : AppCompatActivity() {
 
         database = FirebaseDatabase.getInstance().reference
 
-        findViewById<TextView>(R.id.tv_logo).animate().rotationX(360f).setDuration(4000).withEndAction{
+        val handler = Handler(Looper.getMainLooper())
+        handler.postDelayed({
             startApp()
-        }.start()
+        }, 4000)
     }
 
     private fun startApp() {
