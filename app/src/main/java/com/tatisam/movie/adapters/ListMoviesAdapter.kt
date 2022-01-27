@@ -12,6 +12,7 @@ import kotlinx.coroutines.DelicateCoroutinesApi
 
 class ListMoviesAdapter(private val moviesWithGenres: List<MoviesWithGenres>,
                         val callback: (MoviesWithGenres) -> Unit) : RecyclerView.Adapter<ListMoviesAdapter.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             ListMovieItemBinding.inflate(

@@ -8,7 +8,7 @@ import com.tatisam.lec11.models.*
 import com.tatisam.movie.database.dao.MovieDao
 import com.tatisam.movie.models.*
 
-const val DB_VERSION = 2
+const val DB_VERSION = 1
 const val DB_NAME = "MoviesDatabase"
 
 @Database(entities = [
@@ -18,11 +18,10 @@ const val DB_NAME = "MoviesDatabase"
     Favorite::class], version = DB_VERSION)
 abstract class MovieDataBase: RoomDatabase() {
     companion object{
-        fun create(context: Context): MovieDataBase{
-            val db = Room.databaseBuilder(context, MovieDataBase::class.java, DB_NAME)
+        fun create(context: Context): MovieDataBase {
+            return Room.databaseBuilder(context, MovieDataBase::class.java, DB_NAME)
                 .fallbackToDestructiveMigration()
                 .build()
-            return db
         }
     }
 

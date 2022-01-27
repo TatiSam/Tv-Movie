@@ -13,7 +13,6 @@ android {
     def apikeyPropertiesFile = rootProject.file("apikey.properties")
     //new properties object:
     def apikeyProperties = new Properties()
-
     //fill the properties object with the keys and values from our file:
     apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 
@@ -25,7 +24,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
         buildConfigField('String', 'TMDB_BASE_URL', apikeyProperties['TMDB_BASE_URL'])
         buildConfigField('String', 'TMDB_API_KEY', apikeyProperties['TMDB_API_KEY'])
     }
