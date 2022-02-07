@@ -21,17 +21,13 @@ This is an android application that shows lists of popular movies, popular Tv sh
  - Uses Firebase for authentication.
 
 ## Screenshots
-<div>
-  <img src="https://github.com/tatisam/Tv-Movie/raw/master/login_scrin.jpg" width="400"/>
-  <img src="https://github.com/tatisam/Tv-Movie/raw/master/home_scrin.jpg" width="400" />
-</div>
-<div>
-  <img src="https://github.com/tatisam/Tv-Movie/raw/master/list_scrin.jpg" width="400" />
-  <img src="https://github.com/tatisam/Tv-Movie/raw/master/favorite_scrin.jpg" width="400" />
-</div>
-<div>
-  <img src="https://github.com/tatisam/Tv-Movie/raw/master/item_scrin.jpg" width="400" />
-</div>
+
+<img src="https://github.com/tatisam/Tv-Movie/raw/main/login_scrin.jpg" width="400"/>
+<img src="https://github.com/tatisam/Tv-Movie/raw/main/home_scrin.jpg" width="400" />
+<img src="https://github.com/tatisam/Tv-Movie/raw/main/list_scrin.jpg" width="400" />
+<img src="https://github.com/tatisam/Tv-Movie/raw/main/favorite_scrin.jpg" width="400" />
+<img src="https://github.com/tatisam/Tv-Movie/raw/main/item_scrin.jpg" width="400" />
+
 
 ### Configuration
 You need to get your own key from TMDB.
