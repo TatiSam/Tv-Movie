@@ -14,6 +14,7 @@ import com.tatisam.movie.utils.*
 import kotlinx.coroutines.DelicateCoroutinesApi
 
 class MovieFragment : Fragment() {
+
     private var _binding: MovieFragmentBinding? = null
     private val binding get() = _binding!!
 
@@ -49,6 +50,7 @@ class MovieFragment : Fragment() {
                 getString(R.string.original_language, movieWithGenres.movie.originalLanguage)
             binding.textMovieOriginalTitle.text =
                 getString(R.string.original_title, movieWithGenres.movie.originalTitle)
+
             val favorite = Favorite(
                 movieWithGenres.movie.movieId, movieWithGenres.movie.posterPath,
                 movieWithGenres.movie.title, EXTRA_MEDIA_TYPE_MOVIE
@@ -65,4 +67,5 @@ class MovieFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

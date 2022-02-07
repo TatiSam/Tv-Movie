@@ -14,6 +14,7 @@ import com.tatisam.movie.utils.*
 import kotlinx.coroutines.DelicateCoroutinesApi
 
 class TvFragment : Fragment() {
+
     private var _binding: FragmentTvBinding? = null
     private val binding get() = _binding!!
 
@@ -57,4 +58,5 @@ class TvFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

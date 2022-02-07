@@ -21,6 +21,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class FavoriteFragment : Fragment() {
+
     private lateinit var favoriteViewModel: FavoriteViewModel
     private var _binding: FavoriteFragmentBinding? = null
     private val binding get() = _binding!!
@@ -32,12 +33,11 @@ class FavoriteFragment : Fragment() {
     ): View {
         favoriteViewModel =
             ViewModelProvider(this)[FavoriteViewModel::class.java]
-
         _binding = FavoriteFragmentBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
+    @DelicateCoroutinesApi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -59,7 +59,7 @@ class FavoriteFragment : Fragment() {
                     EXTRA_MEDIA_TYPE_MOVIE -> {
                         lifecycleScope.launch() {
                             launch(Dispatchers.IO) {
-                                MoviesApplication.repository.findMovieWithGenresById(favorite.favId) { result ->
+                                MoviesApplication.movieRepository.findMovieWithGenresById(favorite.favId) { result ->
                                     println(result)
                                     launch(Dispatchers.Main) {
                                         args.putParcelable(EXTRA_POPULAR_MOVIE, result)
@@ -72,7 +72,7 @@ class FavoriteFragment : Fragment() {
                     EXTRA_MEDIA_TYPE_TV -> {
                         lifecycleScope.launch() {
                             launch(Dispatchers.IO) {
-                                MoviesApplication.repository.findTvWithGenresById(favorite.favId) { result ->
+                                MoviesApplication.tvRepository.findTvWithGenresById(favorite.favId) { result ->
                                     println(result)
                                     launch(Dispatchers.Main) {
                                         args.putParcelable(EXTRA_POPULAR_TV, result)
@@ -85,7 +85,7 @@ class FavoriteFragment : Fragment() {
                     EXTRA_MEDIA_TYPE_TRENDING -> {
                         lifecycleScope.launch() {
                             launch(Dispatchers.IO) {
-                                MoviesApplication.repository.findTrendingWithGenresById(favorite.favId) { result ->
+                                MoviesApplication.trendingRepository.findTrendingWithGenresById(favorite.favId) { result ->
                                     println(result)
                                     launch(Dispatchers.Main) {
                                         args.putParcelable(EXTRA_TRENDING_NOW, result)
@@ -98,12 +98,13 @@ class FavoriteFragment : Fragment() {
                 }
                 binding.rvFavorites.setOnClickListener {
                     GlobalScope.launch(Dispatchers.IO) {
-                        MoviesApplication.repository.deleteFavorite(favorite)
+                        MoviesApplication.favoriteRepository.deleteFavorite(favorite)
                     }
                 }
             }
         }
         binding.rvFavorites.layoutManager = LinearLayoutManager(requireContext())
     }
+
 }
 

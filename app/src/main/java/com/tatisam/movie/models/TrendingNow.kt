@@ -14,31 +14,31 @@ data class TrendingNow constructor(
     @SerializedName("id")
     val trendingNowId: Long,
     @SerializedName("media_type")
-    val mediaType: String,
-    val adult: Boolean,
+    val mediaType: String?,
+    val adult: Boolean?,
     val title: String?,
     val name: String?,
     @SerializedName("original_title")
     val originalTitle: String?,
     @SerializedName("original_name")
     val originalName: String?,
-    val overview: String,
+    val overview: String?,
     @SerializedName("original_language")
-    val originalLanguage: String,
+    val originalLanguage: String?,
     @SerializedName("backdrop_path")
-    val backdropPath: String,
+    val backdropPath: String?,
     @SerializedName("poster_path")
-    val posterPath: String,
+    val posterPath: String?,
     @SerializedName("release_date")
     val releaseDate: String?,
     @SerializedName("first_air_date")
     val firstAirDate: String?,
-    val video: Boolean,
-    val popularity: Double,
+    val video: Boolean?,
+    val popularity: Double?,
     @SerializedName("vote_average")
-    val voteAverage: Double,
+    val voteAverage: Double?,
     @SerializedName("vote_count")
-    val voteCount: Long
+    val voteCount: Long?
 ) : Parcelable {
     @Ignore
     @SerializedName("genre_ids")

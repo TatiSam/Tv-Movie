@@ -4,5 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.tatisam.movie.MoviesApplication
 
 class FavoriteViewModel : ViewModel() {
-    val favoriteList = MoviesApplication.repository.favorites
+
+    val favoriteList = MoviesApplication.favoriteRepository.favorites
+
 }

@@ -1,7 +1,6 @@
 package com.tatisam.movie.models
 
 import com.google.gson.annotations.SerializedName
-import com.tatisam.lec11.models.Genre
 
 data class GenreResponse(
     val genres: List<Genre>?,

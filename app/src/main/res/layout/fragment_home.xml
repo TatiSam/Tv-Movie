@@ -7,7 +7,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#00034948"
         tools:context=".ui.home.HomeFragment">
 
@@ -30,14 +30,15 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_movies"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_height="216dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_popular_movies"
             tools:ignore="SpeakableTextPresentCheck"
-            tools:listitem="@layout/movie_item" />
+            tools:listitem="@layout/movie_item">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
         <TextView
             android:id="@+id/text_popular_tv"
@@ -57,7 +58,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_tv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="216dp"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -84,7 +85,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_trending_now"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="336dp"
             android:layout_marginTop="8dp"
             android:paddingBottom="120dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -99,9 +100,8 @@
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/text_trending_now"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.523"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

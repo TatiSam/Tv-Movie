@@ -26,12 +26,15 @@ class FavoriteAdapter (private val favorites: List<Favorite>,
     @DelicateCoroutinesApi
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
         with(favorites[position]) {
-            val posterURL = EXTRA_IMG_URL_W780 + this.favImage
-            Picasso.get().load(posterURL).into(holder.binding.ivFavorite)
+            if(this.favImage != null){
+                val posterURL = EXTRA_IMG_URL_W780 + this.favImage
+                Picasso.get().load(posterURL).into(holder.binding.ivFavorite)
+            }
+
             holder.binding.tvFavTitle.text = this.favTitle
             holder.binding.ibFavorite.setImageResource(R.drawable.red_favorite)
             holder.binding.ibFavorite.setOnClickListener{
-                GlobalScope.launch { MoviesApplication.repository.deleteFavorite(this@with) }
+                GlobalScope.launch { MoviesApplication.favoriteRepository.deleteFavorite(this@with) }
             }
             holder.binding.root.setOnClickListener {
                 callback(this)
@@ -41,4 +44,5 @@ class FavoriteAdapter (private val favorites: List<Favorite>,
     override fun getItemCount(): Int = favorites.size
 
     class ViewHolder(val binding: FavoriteItemBinding) : RecyclerView.ViewHolder(binding.root)
+
 }

@@ -9,11 +9,8 @@ plugins {
 android {
     compileSdk 31
 
-    //url for our file:
     def apikeyPropertiesFile = rootProject.file("apikey.properties")
-    //new properties object:
     def apikeyProperties = new Properties()
-    //fill the properties object with the keys and values from our file:
     apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 
     defaultConfig {

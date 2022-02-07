@@ -42,6 +42,7 @@
             android:background="#A8000000"
             android:contentDescription="@string/description_rating"
             android:paddingStart="8dp"
+            android:paddingEnd="2dp"
             android:paddingTop="8dp"
             android:paddingBottom="2dp"
             android:text="@string/number"

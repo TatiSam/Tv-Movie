@@ -9,7 +9,6 @@ data class MovieResponse(
     val totalPages: Long,
     @SerializedName("total_results")
     val totalResults: Long,
-    //error handling: api can give us more information:
     @SerializedName("status_message")
     val statusMessage: String?,
     @SerializedName("status_code")

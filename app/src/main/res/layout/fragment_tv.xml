@@ -41,6 +41,7 @@
             android:layout_height="wrap_content"
             android:background="#A8000000"
             android:paddingStart="8dp"
+            android:paddingEnd="2dp"
             android:paddingTop="8dp"
             android:paddingBottom="2dp"
             android:text="@string/number"

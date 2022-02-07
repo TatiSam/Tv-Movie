@@ -14,6 +14,7 @@ import com.tatisam.movie.utils.*
 import kotlinx.coroutines.DelicateCoroutinesApi
 
 class TrendingNowFragment : Fragment() {
+
     private var _binding: FragmentTrendingNowBinding? = null
     private val binding get() = _binding!!
 
@@ -74,4 +75,5 @@ class TrendingNowFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

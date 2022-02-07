@@ -50,10 +50,10 @@
             android:drawablePadding="2dp"
             android:paddingStart="8dp"
             android:paddingTop="8dp"
-            android:paddingEnd="6dp"
+            android:paddingEnd="2dp"
             android:paddingBottom="8dp"
             android:text="@string/number"
-            android:textColor="#FFFF00"
+            android:textColor="@color/yellow"
             android:textSize="16sp"
             app:drawableRightCompat="@drawable/star"
             app:drawableTint="@color/yellow"
@@ -62,4 +62,5 @@
             tools:ignore="TextContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.cardview.widget.CardView>

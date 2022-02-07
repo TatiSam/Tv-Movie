@@ -31,6 +31,7 @@ class TrendingNowAdapter (private val trendingWithGenres: List<TrendingWithGenre
                 this.trendingNow.title.toString()
             else
                 this.trendingNow.name.toString()
+
             val favorite = Favorite(this.trendingNow.trendingNowId, this.trendingNow.posterPath,
                                                 title, EXTRA_MEDIA_TYPE_TRENDING)
             val favBtn = holder.binding.ibFavorite
@@ -45,4 +46,5 @@ class TrendingNowAdapter (private val trendingWithGenres: List<TrendingWithGenre
     override fun getItemCount(): Int = trendingWithGenres.size
 
     class ViewHolder(val binding: MovieItemBinding) : RecyclerView.ViewHolder(binding.root)
+
 }

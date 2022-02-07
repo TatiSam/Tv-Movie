@@ -2,8 +2,8 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="120dp"
-    android:layout_height="180dp"
+    android:layout_width="135dp"
+    android:layout_height="200dp"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="4dp"
@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/iv_movie"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:background="#00034948"
             android:contentDescription="@string/description_poster"
             android:scaleType="centerCrop"
@@ -33,10 +33,11 @@
             android:layout_height="wrap_content"
             android:background="#A8000000"
             android:paddingStart="8dp"
+            android:paddingEnd="2dp"
             android:paddingTop="8dp"
             android:paddingBottom="2dp"
             android:text="@string/number"
-            android:textColor="@color/white"
+            android:textColor="@color/yellow"
             android:textSize="14sp"
             app:drawableRightCompat="@drawable/star"
             app:drawableTint="@color/yellow"
@@ -45,14 +46,16 @@
 
         <ImageButton
             android:id="@+id/ib_favorite"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:backgroundTint="#00000000"
             android:contentDescription="@string/description_favorite"
+            android:minHeight="48dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/favorite"
             tools:ignore="ImageContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.cardview.widget.CardView>

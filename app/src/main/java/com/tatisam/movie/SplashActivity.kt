@@ -11,6 +11,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.tatisam.movie.models.AppUser
 
 class SplashActivity : AppCompatActivity() {
+
     lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {

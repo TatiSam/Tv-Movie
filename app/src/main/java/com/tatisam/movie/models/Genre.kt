@@ -1,4 +1,4 @@
-package com.tatisam.lec11.models
+package com.tatisam.movie.models
 
 import android.os.Parcelable
 import androidx.room.*

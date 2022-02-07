@@ -10,20 +10,21 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface MoviesApi {
-    //get popular Movie list
+interface TMDbApi {
+
+    //get popular Movies
     @GET("3/movie/popular")
     suspend fun popularMovies(@Query("page") page : Int = 1): MovieResponse
 
-    //get Genre list
+    //get Genres
     @GET("3/genre/movie/list")
     suspend fun genres(): GenreResponse
 
-    //get popular Tv list
+    //get popular Tvs
     @GET("3/tv/popular")
     suspend fun popularTvs(@Query("page") page : Int = 1): TvResponse
 
-    //get TrendingNow list
+    //get TrendingNow
     @GET("3/trending/all/day")
     suspend fun trendingNow(@Query("page") page: Int = 1): TrendingNowResponse
 
@@ -51,13 +52,14 @@ interface MoviesApi {
                 .build()
         }
 
-        fun create(): MoviesApi {
+        fun create(): TMDbApi {
             return Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(getClient(createInterceptor()))
                 .build()
-                .create(MoviesApi::class.java)
+                .create(TMDbApi::class.java)
         }
     }
+
 }

@@ -1,10 +1,10 @@
 package com.tatisam.movie.utils
 
 import android.widget.ImageButton
-import com.tatisam.lec11.models.Genre
 import com.tatisam.movie.MoviesApplication
 import com.tatisam.movie.R
 import com.tatisam.movie.models.Favorite
+import com.tatisam.movie.models.Genre
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -22,12 +22,12 @@ fun getGenresStr(genres: List<Genre>): String{
 @DelicateCoroutinesApi
 fun favBtnClick(favorite: Favorite, favBtn: ImageButton){
     GlobalScope.launch {
-        if(MoviesApplication.repository.isFavorite(favorite) != 1){
+        if(MoviesApplication.favoriteRepository.isFavorite(favorite) != 1){
             favBtn.setImageResource(R.drawable.red_favorite)
-            MoviesApplication.repository.addFavorite(favorite)
+            MoviesApplication.favoriteRepository.addFavorite(favorite)
         }else{
             favBtn.setImageResource(R.drawable.favorite)
-            MoviesApplication.repository.deleteFavorite(favorite)
+            MoviesApplication.favoriteRepository.deleteFavorite(favorite)
         }
     }
 }
@@ -35,7 +35,7 @@ fun favBtnClick(favorite: Favorite, favBtn: ImageButton){
 @DelicateCoroutinesApi
 fun changeFavoriteIcon(favorite: Favorite, favBtn: ImageButton){
     GlobalScope.launch {
-        if (MoviesApplication.repository.isFavorite(favorite) == 1) {
+        if (MoviesApplication.favoriteRepository.isFavorite(favorite) == 1) {
             favBtn.setImageResource(R.drawable.red_favorite)
         } else {
             favBtn.setImageResource(R.drawable.favorite)

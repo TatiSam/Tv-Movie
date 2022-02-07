@@ -13,25 +13,25 @@ data class Movie constructor(
     @PrimaryKey
     @SerializedName("id")
     val movieId: Long,
-    val adult: Boolean,
-    val title: String,
+    val adult: Boolean?,
+    val title: String?,
     @SerializedName("original_title")
-    val originalTitle: String,
-    val overview: String,
+    val originalTitle: String?,
+    val overview: String?,
     @SerializedName("poster_path")
-    val posterPath: String,
+    val posterPath: String?,
     @SerializedName("original_language")
-    val originalLanguage: String,
-    val video: Boolean,
+    val originalLanguage: String?,
+    val video: Boolean?,
     @SerializedName("release_date")
-    val releaseDate: String,
+    val releaseDate: String?,
     @SerializedName("backdrop_path")
-    val backdropPath: String,
-    val popularity: Double,
+    val backdropPath: String?,
+    val popularity: Double?,
     @SerializedName("vote_average")
-    val voteAverage: Double,
+    val voteAverage: Double?,
     @SerializedName("vote_count")
-    val voteCount: Long
+    val voteCount: Long?
 ) : Parcelable {
     @Ignore
     @SerializedName("genre_ids")

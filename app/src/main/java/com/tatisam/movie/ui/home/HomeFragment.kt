@@ -11,13 +11,15 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tatisam.movie.R
-import com.tatisam.movie.adapters.MoviesAdapter
+import com.tatisam.movie.adapters.MovieAdapter
 import com.tatisam.movie.adapters.TrendingNowAdapter
 import com.tatisam.movie.adapters.TvAdapter
 import com.tatisam.movie.databinding.FragmentHomeBinding
+import com.tatisam.movie.models.MoviesWithGenres
 import com.tatisam.movie.utils.*
 
 class HomeFragment : Fragment() {
+
     private lateinit var homeViewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -30,6 +32,7 @@ class HomeFragment : Fragment() {
         homeViewModel =
             ViewModelProvider(this)[HomeViewModel::class.java]
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
@@ -37,8 +40,11 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         onClick(binding.textPopularMovies)
+        onClick(binding.textPopularTv)
+        onClick(binding.textTrendingNow)
+
         homeViewModel.popularMovies.observe(viewLifecycleOwner){ it ->
-            binding.rvMovies.adapter = MoviesAdapter(it){
+            binding.rvMovies.adapter = MovieAdapter(it as MutableList<MoviesWithGenres>){
                 val args = Bundle()
                 args.putParcelable(EXTRA_POPULAR_MOVIE, it)
                 val nav = findNavController()
@@ -48,7 +54,6 @@ class HomeFragment : Fragment() {
             setHorizontalLayout(binding.rvMovies)
         }
 
-        onClick(binding.textPopularTv)
         homeViewModel.popularTvs.observe(viewLifecycleOwner){ it ->
             binding.rvTv.adapter = TvAdapter(it){
                 val args = Bundle()
@@ -60,16 +65,14 @@ class HomeFragment : Fragment() {
             setHorizontalLayout(binding.rvTv)
         }
 
-        onClick(binding.textTrendingNow)
         homeViewModel.trendingNow.observe(viewLifecycleOwner){it ->
-            //Hide progress
-            binding.progressHome.visibility = View.GONE
             binding.rvTrendingNow.adapter = TrendingNowAdapter(it){
                 val args = Bundle()
                 args.putParcelable(EXTRA_TRENDING_NOW, it)
                 val nav = findNavController()
                 nav.navigate(R.id.action_navigation_home_to_trendingNowFragment, args)
             }
+            binding.progressHome.visibility = View.GONE
             binding.rvTrendingNow.layoutManager = LinearLayoutManager(requireContext())
             setHorizontalLayout(binding.rvTrendingNow)
         }
@@ -96,4 +99,5 @@ class HomeFragment : Fragment() {
             false
         )
     }
+
 }

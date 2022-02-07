@@ -7,17 +7,20 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
-    val popularMovies = MoviesApplication.repository.moviesWithGenres
-    val popularTvs = MoviesApplication.repository.tvsWithGenres
-    val trendingNow = MoviesApplication.repository.trendingWithGenres
+
+    val popularMovies = MoviesApplication.movieRepository.moviesWithGenres
+    val popularTvs = MoviesApplication.tvRepository.tvsWithGenres
+    val trendingNow = MoviesApplication.trendingRepository.trendingWithGenres
+
 
     init {
         MoviesApplication.networkStatusChecker.performIfConnectedToInternet {
             viewModelScope.launch(Dispatchers.IO) {
-                MoviesApplication.repository.fetchMoviesAndGenres()
-                MoviesApplication.repository.fetchTvsAndGenres()
-                MoviesApplication.repository.fetchTrendingAndGenres()
+                MoviesApplication.movieRepository.fetchMoviesAndGenres()
+                MoviesApplication.tvRepository.fetchTvsAndGenres()
+                MoviesApplication.trendingRepository.fetchTrendingAndGenres()
             }
         }
     }
+
 }

@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class Favorite(
     @PrimaryKey
     val favId: Long,
-    val favImage: String,
+    val favImage: String?,
     val favTitle: String?,
     val favType: String
-        )
+    )

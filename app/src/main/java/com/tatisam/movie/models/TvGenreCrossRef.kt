@@ -5,7 +5,6 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Junction
 import androidx.room.Relation
-import com.tatisam.lec11.models.Genre
 import kotlinx.parcelize.Parcelize
 
 @Entity(primaryKeys = ["tvId", "genreId"])

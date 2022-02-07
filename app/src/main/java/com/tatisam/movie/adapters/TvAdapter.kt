@@ -26,7 +26,6 @@ class TvAdapter (private val tvsWithGenres: List<TvWithGenres>,
             val posterURL = EXTRA_IMG_URL_W500 + this.tv.posterPath
             Picasso.get().load(posterURL).into(holder.binding.ivMovie)
             holder.binding.textItemScore.text = this.tv.voteAverage.toString()
-
             val favorite = Favorite(this.tv.tvId, this.tv.posterPath, this.tv.name, EXTRA_MEDIA_TYPE_TV)
             val favBtn = holder.binding.ibFavorite
             changeFavoriteIcon(favorite, favBtn)
@@ -36,7 +35,9 @@ class TvAdapter (private val tvsWithGenres: List<TvWithGenres>,
                 callback(this)
             }
         }
+
     override fun getItemCount(): Int = tvsWithGenres.size
 
     class ViewHolder(val binding: MovieItemBinding) : RecyclerView.ViewHolder(binding.root)
+
 }

@@ -45,4 +45,5 @@ class ListTrendingNowAdapter (private val trendingWithGenres: List<TrendingWithG
     override fun getItemCount(): Int = trendingWithGenres.size
 
     class ViewHolder(val binding: ListMovieItemBinding) : RecyclerView.ViewHolder(binding.root)
+
 }

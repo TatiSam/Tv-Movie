@@ -17,6 +17,7 @@ import com.tatisam.movie.utils.EXTRA_POPULAR_TV
 import com.tatisam.movie.utils.EXTRA_TRENDING_NOW
 
 class ListFragment : Fragment() {
+
     private lateinit var listViewModel: ListViewModel
     private var _binding: FragmentListBinding? = null
     private val binding get() = _binding!!
@@ -58,7 +59,7 @@ class ListFragment : Fragment() {
 
     private fun viewMovies(){
         listViewModel.popularMovies.observe(viewLifecycleOwner){ it ->
-            binding.rvList.adapter = ListMoviesAdapter(it){
+            binding.rvList.adapter = ListMovieAdapter(it){
                 val args = Bundle()
                 args.putParcelable(EXTRA_POPULAR_MOVIE, it)
                 val nav = findNavController()

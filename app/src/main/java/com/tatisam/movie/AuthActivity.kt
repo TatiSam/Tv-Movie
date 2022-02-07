@@ -17,6 +17,7 @@ import android.text.InputType
 import android.widget.Toast
 
 class AuthActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityAuthBinding
     private val email get() = binding.content.etEmail.text.toString()
     private val password get() = binding.content.etPassword.text.toString()
@@ -25,6 +26,7 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.content.btnLogin.setOnClickListener { login(email, password) }
         binding.content.btnSignIn.setOnClickListener { showSignInDialog() }
     }
@@ -148,4 +150,5 @@ class AuthActivity : AppCompatActivity() {
                 )
             }
     }
+
 }
