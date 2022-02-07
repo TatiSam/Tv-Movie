@@ -13,7 +13,7 @@ This is an android application that shows lists of popular movies, popular Tv sh
  - Uses Android Architecture Components, specifically ViewModel and LiveData.
  - Uses MVVM architecture pattern.
  - Uses a Single-Activity Architecture.
- - Uses Coroutines
+ - Uses Coroutines for asynchronous programming.
  - Uses Retrofit for making API calls.
  - Uses Room for managing a local SQLite database
  - Uses Picasso for image loading.
