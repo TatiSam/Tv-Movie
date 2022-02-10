@@ -1,5 +1,5 @@
 # Tv&Movie
-This is an android application that shows lists of popular movies, popular Tv shows and details of each movie and Tv show with help of TMDB API.
+This is an android application that shows lists of popular movies, popular Tv shows and details of each movie and Tv show with help of [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction).
 
 ## Features:
 - Discover popular movies on TMDB and view movie details like poster, list of genres, release date, rating, overview, original title and original language.
@@ -9,16 +9,16 @@ This is an android application that shows lists of popular movies, popular Tv sh
 - Works offline by caching data into a database.
 
 ## Architecture and Tech features
- - Written in Kotlin language.
+ - Written in [Kotlin](https://kotlinlang.org/) language.
  - Uses Android Architecture Components, specifically ViewModel and LiveData.
  - Uses MVVM architecture pattern.
  - Uses a Single-Activity Architecture.
- - Uses Coroutines for asynchronous programming.
- - Uses Retrofit for making API calls.
- - Uses Room for managing a local SQLite database
- - Uses Picasso for image loading.
- - Uses Lottie for animation.
- - Uses Firebase for authentication.
+ - Uses [Coroutines](https://developer.android.com/kotlin/coroutines?gclid=Cj0KCQiAjJOQBhCkARIsAEKMtO08q2fdRwll0y8F2QChrrPgLbOVxYZAdNIzc4w6Zt494eDB7iI06pYaAiwjEALw_wcB&gclsrc=aw.ds) for asynchronous programming.
+ - Uses [Retrofit](https://square.github.io/retrofit/) for making API calls.
+ - Uses [Room](https://developer.android.com/jetpack/androidx/releases/room) for managing a local SQLite database
+ - Uses [Picasso](https://square.github.io/picasso/) for image loading.
+ - Uses [Lottie](https://lottiefiles.com/) for animation.
+ - Uses [Firebase](https://firebase.google.com/) for authentication.
 
 ## Screenshots
 
