@@ -31,3 +31,11 @@ This is an android application that shows lists of popular movies, popular Tv sh
 
 ### Configuration
 You need to get your own key from TMDB.
+
+## Author
+
+Tatiana Samoilenko
+
+tatismoilenko@gmail.com
+
+Israel
